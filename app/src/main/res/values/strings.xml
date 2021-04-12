@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ViewPagerTwoDemo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">PAGE ONE</string>
+    <string name="page_two">PAGE TWO</string>
+
+    <string-array name="tab_names">
+    <item >"Page one"</item>
+    <item >"Page two"</item>
+    </string-array>
+
+</resources>
