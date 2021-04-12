@@ -1,15 +1,15 @@
 package hu.itatti.viewpagertwodemo
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.renderscript.ScriptGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
 import hu.itatti.viewpagertwodemo.databinding.ActivityMainBinding
+import hu.itatti.viewpagertwodemo.pageanim.ZoomOutPageTransformer
 
 class MainActivity : AppCompatActivity() {
-    lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
 
     private var pageChangeCallback = object : ViewPager2.OnPageChangeCallback(){
         override fun onPageSelected(position: Int) {
@@ -37,6 +37,11 @@ class MainActivity : AppCompatActivity() {
             tab,position ->
             tab.text = pageNames[position]
         }.attach()
+
+        binding.mainViewPager.setPageTransformer(ZoomOutPageTransformer())
+        //binding.mainViewPager.setPageTransformer(DepthPageTransformer())
+
+
     }
 
     override fun onDestroy() {
